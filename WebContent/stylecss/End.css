@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+body {
+  background-image: url(../img/nonend.png); 
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

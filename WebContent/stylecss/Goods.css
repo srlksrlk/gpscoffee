@@ -1,0 +1,113 @@
+@CHARSET "UTF-8";
+
+/*テーブルの背景に茶色の紙を置こうとしたけどうまくいかないので一時的にコメントアウト
+.GoodsPremiumTableBack{
+	background-image: url("../img/GoodsPremiumTableBack.jpg");
+	background-size: cover;
+}
+*/
+
+/* TOP画像 */
+body{
+	font-family:  "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, Meiryo, sans-serif;
+}
+
+.topimg{
+	width:100%;
+	top:-10%;
+	position:relative;
+}
+
+.ghost-button {
+	display: inline-block;
+  	width: 200px;
+  	height: 40px;
+ 	margin: 0px;
+	padding: 5px;
+	background: rgba(0,0,0,0.25);;
+	color: #fff;
+	text-decoration: none;
+  	font-weight: bold;
+	border: 2px hidden #fff;
+	text-align: center;
+	outline: none;
+	transition: 0.5s;
+	text-align:center;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+  color: #333;
+  background: #fff;
+}
+
+
+.Premium-button{
+ position: absolute;
+ top: 30%;
+ right: 100px;
+ text-align:center
+}
+
+.Twitter-button{
+ position: absolute;
+ top: 50%;
+ right: 100px;
+ text-align:center
+}
+
+
+
+/*プレミアの画像にマスクをかける*/
+figure {
+	position: relative;
+	overflow: hidden;
+	width: 220px;
+}
+figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	-webkit-transition: .3s;
+	transition: .3s;
+	opacity: 0;
+}
+figure:hover figcaption {
+	opacity: 1;
+}
+
+/*マスク上の文字を白くする*/
+.white { color:white; }
+
+/* 焙煎とグラインドの横の画像サイズ指定 */
+.imgsizing{
+	height: 250px;
+	width: auto;
+}
+
+/* 焙煎とグラインドの画像にグラデーションをかける */
+.frame {
+	display: inline-block;
+	position: relative;
+	opacity: 0.8;
+}
+.frame:after {
+	position: absolute;
+	display: block;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(left, rgba(255, 255, 255, 0) 40%, #fff 100%); /* 塗りつぶす */
+}
+
+
+.sizing{
+	width: 250px;
+	height: auto;
+}

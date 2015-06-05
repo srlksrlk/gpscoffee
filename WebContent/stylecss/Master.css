@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+/*全体的なBodyの統一*/
+body{
+	background-color:#F1F1F1;
+	font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+/*UerInfoのフォーム幅確定*/
+.formWidth{
+	width:300px;
+}
+/*Adminでのエラーメッセージの表示Status*/
+.noticeFont{
+	font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+	size:"3";
+	color:#FF0000;
+	font-weight: bold;
+	text-align: center;
+}
+/*Adminの白箱部分*/
+#box1{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/*Adminのフォームstyle*/
+#administratorId{
+	border:0;
+	padding:4px;
+	font-size:1.0em;
+	color:#aaa;
+	border:solid 1px #ccc;
+	margin:0 0 20px;
+	width:200px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+}
+
+/*Adminのフォームstyle*/
+#administratorPass{
+	border:0;
+	padding:4px;
+	font-size:1.0em;
+	color:#aaa;
+	border:solid 1px #ccc;
+	margin:0 0 20px;
+	width:200px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}

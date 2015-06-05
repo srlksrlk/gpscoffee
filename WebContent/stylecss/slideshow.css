@@ -1,0 +1,85 @@
+/* すべての写真を格納するdiv定義 */
+　#pcontainer { position:relative;width:100%; height:100%;overflow:hidden; }
+/* 各スライドdivの背景画像設定 */
+#photo1 { background-image: url(../img/popslide/Top1.jpg); }
+#photo2 { background-image: url(../img/popslide/Top2.jpg); }
+#photo3 { background-image: url(../img/popslide/Top3.jpg); }
+#photo4 { background-image: url(../img/popslide/Top4.jpg); }
+#photo5 { background-image: url(../img/popslide/Top5.jpg); }
+/* 表示画面サイズ幅が640px以下で画像切り替え */
+@media screen and (max-width: 640px) {
+    #photo1 { background-image: url(../img/popslide/Top1.jpg); }
+    #photo2 { background-image: url(../img/popslide/Top2.jpg); }
+    #photo3 { background-image: url(../img/popslide/Top3.jpg); }
+    #photo4 { background-image: url(../img/popslide/Top4.jpg); }
+    #photo5 { background-image: url(../img/popslide/Top5.jpg); }
+}
+/* 全スライド共通のstyleとanimationの設定 */
+.frame { 
+    width:100%; height:100%; position:absolute;top:0;left:100%;
+    background-size:cover;
+    animation:imgTrans 30s infinite;
+    -webkit-animation:imgTrans 30s infinite;
+}
+/* 各スライドのanimationに時間的ずれを設定 */
+#photo2 { animation-delay: 6s;-webkit-animation-delay: 6s; }
+#photo3 { animation-delay:12s;-webkit-animation-delay:12s; }
+#photo4 { animation-delay:18s;-webkit-animation-delay:18s; }
+#photo5 { animation-delay:24s;-webkit-animation-delay:24s; }
+/* メモ表示の共通したstyleとanimationの設定 */
+.memo {
+    display:inline-block;
+    max-width:300px;width:85%;
+    background-color: rgba( 255, 255, 255, 0.6 );
+    padding:10px;
+    position:absolute;
+    bottom:10%;
+    left:5%;
+    font-size:14px;
+    opacity:0;
+    animation:txtTrans 30s infinite;
+    -webkit-animation:txtTrans 30s infinite;
+}
+/* 各メモのanimationに時間的ずれを設定 */
+#photo2 .memo { animation-delay: 6s;-webkit-animation-delay: 6s; }
+#photo3 .memo { animation-delay:12s;-webkit-animation-delay:12s; }
+#photo4 .memo { animation-delay:18s;-webkit-animation-delay:18s; }
+#photo5 .memo { animation-delay:24s;-webkit-animation-delay:24s; }
+
+/* 一時停止ボタンとプレイボタンの表示とanimation制御の定義 */
+#pause_btn:checked ~ #pcontainer .frame { animation-play-state:paused;-webkit-animation-play-state:paused; }
+#pause_btn:checked ~ #pcontainer .frame span { animation-play-state:paused;-webkit-animation-play-state:paused; }
+#pause_btn:checked ~ #pause img { display:none; }
+#pause_btn:checked ~ #play img { display:block; }
+#play_btn:checked ~ #pcontainer .frame { animation-play-state:running;-webkit-animation-play-state:running; }
+#play_btn:checked ~ #pcontainer .frame span { animation-play-state:running;-webkit-animation-play-state:running; }
+
+/* 一時停止ボタンとプレイボタンのstyleの定義 */
+.r_btn { display:none; }
+#play img { display:none; }
+label { position:absolute;left:50%;bottom:5%;margin-left:-30px; }
+label img { max-width:60px; width:70%;} 
+label img:hover { cursor:pointer; }
+
+/* スライドのFadeIn,FadeOutのanimation設定 */
+@keyframes imgTrans {
+0% { left:100%; }
+5% { left:0%; }
+20% { left:0%; }
+25% { left:-100%; }
+100% { left:-100%; }
+}
+@-webkit-keyframes imgTrans {
+ 0% { left:100%; }
+5% { left:0%; }
+20% { left:0%; }
+25% { left:-100%; }
+100% { left:-100%; }
+}
+
+
+#toumei{
+	width:100%;
+	height:auto;
+	opacity:0;
+}

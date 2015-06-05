@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<package name="jp.co.internous.gpscoffee.action" extends="struts-default">
+
+		<!-- 店舗情報を取得して店舗一覧画面に遷移するアクション -->
+		<action name="GoStoreListAction" class="jp.co.internous.gpscoffee.action.GoStoreListAction"
+		method="execute">
+		<result name="success">StoreList.jsp</result>
+		</action>
+
+		<!-- 管理者としてログインして注文情報確認画面へと遷移するアクション　-->
+		<action name="LoginAdminAction" class="jp.co.internous.gpscoffee.action.LoginAdminAction"
+		method="execute">
+		<interceptor-ref name="token" />
+		<interceptor-ref name="defaultStack" />
+		<result name="invalid.token" >Admin.jsp</result>
+		<result name="success">/WEB-INF/hidden-jsp/Task.jsp</result>
+		<result name="error">Admin.jsp</result>
+		</action>
+
+		<!-- 受け渡しが済んだ時点reservationテーブル(注文)の情報をhistory(購入履歴)へと登録するためのアクション -->
+		<action name="DeliveryAcceptAction" class="jp.co.internous.gpscoffee.action.DeliveryAcceptAction"
+		method="execute">
+		<interceptor-ref name="token" />
+		<interceptor-ref name="defaultStack" />
+		<result name="invalid.token" >/WEB-INF/hidden-jsp/Task.jsp</result>
+		<result name="success">/WEB-INF/hidden-jsp/Task.jsp</result>
+		</action>
+
+		<!-- プレミアムユーザーをDBに登録する為のアクション -->
+		<action name="InsertUserInfoAction" class="jp.co.internous.gpscoffee.action.InsertUserInfoAction"
+		method="execute">
+		<interceptor-ref name="token" />
+		<interceptor-ref name="defaultStack" />
+		<result name="invalid.token" >Admin.jsp</result>
+		<result name="success">/WEB-INF/hidden-jsp/UserInfo.jsp</result>
+		<result name="error">/WEB-INF/hidden-jsp/UserInfo.jsp</result>
+		</action>
+
+		<!-- 登録されたプレミアムユーザー情報を変更するアクション -->
+		<action name="EditUserInfoAction" class="jp.co.internous.gpscoffee.action.EditUserInfoAction"
+		method="execute">
+		<interceptor-ref name="token" />
+		<interceptor-ref name="defaultStack" />
+		<result name="invalid.token" >Admin.jsp</result>
+		<result name="success">/WEB-INF/hidden-jsp/UserInfo.jsp</result>
+		<result name="error">/WEB-INF/hidden-jsp/UserInfo.jsp</result>
+		</action>
+
+		<!-- 登録されたプレミアムユーザー情報を照会するアクション -->
+		<action name="ShowUserInfoAction" class="jp.co.internous.gpscoffee.action.ShowUserInfoAction"
+		method="execute">
+		<interceptor-ref name="token" />
+		<interceptor-ref name="defaultStack" />
+		<result name="invalid.token" >Admin.jsp</result>
+		<result name="success">/WEB-INF/hidden-jsp/UserInfo.jsp</result>
+		<result name="error">/WEB-INF/hidden-jsp/UserInfo.jsp</result>
+		</action>
+
+		<!-- 管理者ログイン画面へと遷移するためのアクション -->
+		<action name="LogoutAdminAction" class="jp.co.internous.gpscoffee.action.LogoutAdminAction"
+		method="execute">
+		<result name="success">Admin.jsp</result>
+		</action>
+
+		<!-- 店舗一覧画面へと遷移するためのアクション -->
+		<action name="BackStoreListAction" class="jp.co.internous.gpscoffee.action.BackStoreListAction"
+		method="execute">
+		<result name="success">Index.jsp</result>
+		</action>
+
+		<!-- 商品一覧画面へと遷移するためのアクション -->
+		<action name="EnterStoreAction" class="jp.co.internous.gpscoffee.action.EnterStoreAction"
+		method="execute">
+		<result name="success">/Goods.jsp</result>
+		<result name="error">/Index.jsp</result>
+		</action>
+
+		<!-- 確認画面へと遷移するためのアクション -->
+		<action name="PushCartAction" class="jp.co.internous.gpscoffee.action.PushCartAction"
+		method="execute">
+		<result name="success">OrderForm.jsp</result>
+		<result name="error">Goods.jsp</result>
+		</action>
+
+		<!-- 確認画面から商品一覧画面に戻るためのアクション -->
+		<action name="BackGoodsAction" class="jp.co.internous.gpscoffee.action.GoBackAction"
+		method="execute">
+		<result name="success">Goods.jsp</result>
+		</action>
+
+		 <!-- ログイン画面へ遷移するためのアクション -->
+		<action name="GoLoginAction" class="jp.co.internous.gpscoffee.action.GoBackAction"
+		method="execute">
+		<result name="success">/Login.jsp</result>
+		</action>
+
+		 <!-- ログイン画面へ遷移するためのアクション -->
+		<action name="LoginPremiumAction" class="jp.co.internous.gpscoffee.action.LoginPremiumAction"
+		method="execute">
+		<interceptor-ref name="tokenSession" />
+		<interceptor-ref name="defaultStack" />
+		<result name="invalid.token" >Goods.jsp</result>
+		<result name="success">/Goods.jsp</result>
+		<result name="error">/Login.jsp</result>
+		</action>
+
+		<!-- 完了画面へ遷移するためのアクション -->
+		<action name="EditCompleteAction" class="jp.co.internous.gpscoffee.action.EditCompleteAction"
+		method="execute">
+		<interceptor-ref name="tokenSession" />
+		<interceptor-ref name="defaultStack" />
+		<result name="invalid.token" >OrderForm.jsp</result>
+		<result name="success">/End.jsp</result>
+		<result name="error">/Goods.jsp</result>
+		</action>
+
+		<!-- 確認画面で選択した商品を全削除するためのアクション -->
+		<action name="DeleteCartAction" class="jp.co.internous.gpscoffee.action.DeleteCartAction"
+		method="execute">
+		<result name="success">OrderForm.jsp</result>
+		</action>
+
+		<!-- 確認画面で選択した商品を選択削除するためのアクション -->
+		<action name="SelectDeleteCartAction" class="jp.co.internous.gpscoffee.action.SelectDeleteCartAction"
+		method="execute">
+		<result name="success" type="chain">PushCartAction</result>
+		</action>
+
+		<!-- 商品一覧画面で商品を選択するためのアクション -->
+		<action name="PurchaseSelectAction" class="jp.co.internous.gpscoffee.action.PurchaseSelectAction"
+		method="execute">
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="token">
+				<param name="excludeMethods"></param>
+			</interceptor-ref>
+			<result name="invalid.token">Goods.jsp</result>
+		<result name="success">/Goods.jsp</result>
+		</action>
+
+		<!-- TwitterOAuth認証へと遷移するためのアクション -->
+		<action name="GoTwitterAction" class="jp.co.internous.gpscoffee.twitter.GoTwitterAction"
+		method="execute">
+		<result name="success">Goods.jsp</result>
+		</action>
+
+		<!-- TwitterOAuth認証後商品一覧へと遷移するためのアクション -->
+		<action name="LoginTwitterAction" class="jp.co.internous.gpscoffee.twitter.LoginTwitterAction"
+		method="execute">
+		<result name="success">/Goods.jsp</result>
+		<result name="error">/Index.jsp</result>
+		</action>
+
+		<!-- 会員情報画面へと遷移するためのアクション -->
+		<action name="GoUserInfoAction" class="jp.co.internous.gpscoffee.action.GoUserInfoAction"
+		method="execute">
+		<result name="success">/WEB-INF/hidden-jsp/UserInfo.jsp</result>
+		<result name="error">Admin.jsp</result>
+		</action>
+
+		<!-- 商品一覧画面の更新ボタンのためのアクション -->
+		<action name="GoBackAction" class="jp.co.internous.gpscoffee.action.GoBackAction"
+		method="execute">
+		<result name="success">Goods.jsp</result>
+		</action>
+
+		<!--統計画面へと遷移するためのアクション -->
+		<action name="GoStatistics" class="jp.co.internous.gpscoffee.action.StatisticsAction"
+		method="execute">
+		<result name="success">/WEB-INF/hidden-jsp/Statistics.jsp</result>
+		</action>
+
+		<!--受渡し確認画面に遷移するアクション -->
+		<action name="GoTaskAction" class="jp.co.internous.gpscoffee.action.GoBackAction"
+		method="execute">
+		<result name="success">/WEB-INF/hidden-jsp/Task.jsp</result>
+		</action>
+	</package>
+</struts>
+

@@ -1,0 +1,263 @@
+@CHARSET "UTF-8";
+
+/* onpngここから */
+.onpng{
+	position: relative;
+}
+
+#Titlelogo{
+	position: absolute;
+	width: 80%;
+	top: 180px;
+	right: 0px;
+}
+
+/* onpngここまで */
+
+#emb{
+	width:200px;
+	height: auto;
+}
+
+body {
+
+}
+
+.title{
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	font-size:80px;
+}
+
+.storeselect{
+	position: absolute;
+	bottom:10%;
+	right: 10%;
+}
+
+ul , li {
+  margin: 0;
+  padding: 0;
+}
+
+.ringMenu {
+  text-align:center;
+  position: absolute;
+ /*  left: 300px;
+  top: 200px;
+  width: 200px;
+  height: 60px;
+  margin-bottom: 10px; */
+   margin: 25% 40%;
+
+}
+
+.ringMenu:hover {
+ /* padding: 30px 30px;
+  margin: -30px -30px; */
+   margin: 25% 40%;
+}
+.ringMenu ul {
+  list-style: none;
+  position: relative;
+  width: 100px;
+color: white;
+
+}
+.ringMenu ul a {
+  color: white;
+}
+.ringMenu ul li {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.ringMenu ul li a {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: rgba(50,50,50,0.7);
+    /*  text-align: center;*/
+    line-height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+
+}
+.ringMenu ul li a:hover {
+    background: rgba(230,150,20,0.7);
+}
+
+.ringMenu ul li:not(.main) {
+ border-radius: 50px;
+  -webkit-transform: rotate(-180deg) scale(0);
+  -moz-transform: rotate(-180deg) scale(0);
+  -o-transform: rotate(-180deg) scale(0);
+  transform: rotate(-180deg) scale(0);
+  opacity: 0;
+
+}
+.ringMenu:hover ul li {
+  -webkit-transform: rotate(0) scale(1);
+  -moz-transform: rotate(0) scale(1);
+  -o-transform: rotate(0) scale(1);
+  transform: rotate(0) scale(1);
+  opacity: 1;
+}
+.ringMenu ul li.top {
+  -webkit-transform-origin: 50% 152px;
+    -moz-transform-origin: 50% 152px;
+    -o-transform-origin: 50% 152px;
+    transform-origin: 50% 152px;
+    position: absolute;
+    top: -202px;
+    left: 0;
+
+}
+.ringMenu ul li.bottom {
+ border-radius: 50px;
+  -webkit-transform-origin: 50% -102px;
+  -moz-transform-origin: 50% -52px;
+  -o-transform-origin: 50% -52px;
+  transform-origin: 50% -52px;
+  position: absolute;
+ left: 5;
+  bottom: -102px;
+      -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+    border-radius:100%;
+
+
+}
+.ringMenu ul li.right {
+    border-radius: 50px;
+    -webkit-transform-origin: -52px 50%;
+    -moz-transform-origin: -52px 50%;
+    -o-transform-origin: -52px 50%;
+    transform-origin: -52px 50%;
+    position: absolute;
+    top: -40px;
+    right: -150px;
+        -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+    border-radius:100%;
+
+}
+.ringMenu ul li.left {
+    border-radius: 50px;
+    -webkit-transform-origin: 152px 50%;
+    -moz-transform-origin: 152px 50%;
+    -o-transform-origin: 152px 50%;
+    transform-origin: 152px 50%;
+    position: absolute;
+    top: -40px;
+    left: -152px;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+    border-radius:100%;
+}
+.ringimg    {
+ position: relative;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+    border-radius:100%;
+    botom: 105px;
+    right: 50px;
+        -moz-border-radius:100%;
+    -webkit-border-radius:100%;
+    border-radius:100%;
+}
+
+.staff{
+	margin-bottom:30px;
+}
+
+
+
+
+
+
+
+/*フォーム用*/
+
+#lock {
+	z-index: 10000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	text-align: center;
+	display: none;
+	opacity: 0.7;
+}
+
+/*スタッフの画像を丸める*/
+
+#stafflist{
+	width: 150px;
+	height: auto;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+}
+
+
+/*スタッフ紹介のh2の装飾*/
+div.staffbox
+{
+     position: relative;
+     padding: 10px 10px;
+     border-radius:1px;
+     border:1px solid #666;
+     margin: 10px 0px;
+     width: 400px;
+     height:80px;
+     background: #fff;
+}
+div.staffbox:before, div.staffbox:after
+{
+     z-index: -1;
+     position: absolute;
+     content: "";
+     bottom: 15px;
+     width: 30%;
+     height:10px;
+     box-shadow: 0 15px 10px #444;
+}
+
+div.staffbox:before
+{
+     left: 5px;
+     -webkit-transform: rotate(-5deg);
+     -moz-transform: rotate(-5deg);
+     -o-transform: rotate(-5deg);
+     -ms-transform: rotate(-5deg);
+     transform: rotate(-5deg);
+}
+div.staffbox:after
+{
+     right: 5px;
+     -webkit-transform: rotate(5deg);
+     -moz-transform: rotate(5deg);
+     -o-transform: rotate(5deg);
+     -ms-transform: rotate(5deg);
+     transform: rotate(5deg);
+}
+
+/*Aboutの背景設定　ローカルでは正常起動　ちょろめだと幅がおかしい*/
+.about {
+	width:100%;
+	position: absolute;
+}
+
+#about {
+	position: relative;
+	width: 100%;
+	filter: alpha(opacity = 30);
+	-moz-opacity: 0.3;
+	opacity: 0.3;
+}

@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+body{
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/*箱を柔らかくする*/
+
+#LoginId{
+	border:0;
+	padding:4px;
+	font-size:1.0em;
+	color:#aaa;
+	border:solid 1px #ccc;
+	margin:0 0 20px;
+	width:200px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+}
+
+/*Adminのフォームstyle*/
+#LoginPass{
+	border:0;
+	padding:4px;
+	font-size:1.0em;
+	color:#aaa;
+	border:solid 1px #ccc;
+	margin:0 0 20px;
+	width:200px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
